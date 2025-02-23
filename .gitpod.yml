@@ -1,0 +1,21 @@
+image: gitpod/workspace-full-vnc
+
+tasks:
+  - init: |
+      sudo apt-get update
+      sudo apt-get install -y \
+          python3-pip \
+          zlib1g-dev \
+          libncurses5-dev \
+          libgdbm-dev \
+          libnss3-dev \
+          libssl-dev \
+          libsqlite3-dev \
+          libreadline-dev \
+          libffi-dev \
+          autoconf \
+          automake \
+          libtool \
+          openjdk-17-jdk
+      pip3 install --upgrade buildozer cython
+  - command: buildozer -v android debug
